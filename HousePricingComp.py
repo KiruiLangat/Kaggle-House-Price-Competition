@@ -18,7 +18,7 @@ from sklearn.metrics import mean_absolute_error
 
 #loading data
 train_data = pd.read_csv(r"C:\Users\sms20\Machine Learning\Kaggle-Housing-Prices-Competition\Housing-Prices-Competition\train.csv")
-print(train_data.columns)
+#print(train_data.columns)
 
 #target
 y = train_data.SalePrice
@@ -61,8 +61,19 @@ HousePriceRF_predictions = HousePriceRF_model.predict(val_X)
 
 #mean absolute error
 HousePriceRF_mae = mean_absolute_error(val_y, HousePriceRF_predictions)
-print("Mean Absolute Error: ", HousePriceRF_mae)
+print("Mean Absolute Error (Random Forest): ", HousePriceRF_mae)
 
+#Using DecisionTreeRegressor
+from sklearn.tree import DecisionTreeRegressor
+
+test_model = DecisionTreeRegressor(random_state = 1)
+
+test_model.fit(train_X, train_y)
+
+test_predictions = test_model.predict(val_X)
+
+test_mae = mean_absolute_error(val_y, test_predictions)
+print("Mean Absolute Error(Decision Tree): ", test_mae)
 
 
 
