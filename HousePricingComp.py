@@ -67,16 +67,16 @@ output.to_csv('submission.csv', index = False)
 
 
 # #Using DecisionTreeRegressor
-# from sklearn.tree import DecisionTreeRegressor
+from sklearn.tree import DecisionTreeRegressor
 
-# test_model = DecisionTreeRegressor(random_state = 1)
+test_model = DecisionTreeRegressor(random_state = 1)
 
-# test_model.fit(train_X, train_y)
+test_model.fit(train_X, train_y)
 
-# test_predictions = test_model.predict(val_X)
+test_predictions = test_model.predict(val_X)
 
-# test_mae = mean_absolute_error(val_y, test_predictions)
-# print("Mean Absolute Error(Decision Tree): ", test_mae)
+test_mae = mean_absolute_error(val_y, test_predictions)
+print("Mean Absolute Error(Decision Tree): ", test_mae)
 
 
 
